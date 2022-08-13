@@ -1,18 +1,23 @@
 <template>
   <div>
-    <input type="number">
-    <button>Price Filter</button>
-
-    <article v-for="(item,index) in items" :key = "index">
-        <h3>{{item[`title`]}}</h3>
-        <p>{{item[`price`]}}</p>
-        <h4>{{item[`description`]}}</h4>
+    <!-- this will filter the users price selection showing only items with prices that are equal too or less than the number they enterd -->
+    <input type="number" />
+    <button @click="price_filter">Price Filter</button>
+    <!-- using a for loop inside HTML to display the items in the array inside the data js section -->
+    <article v-for="(item, index) in items" :key="index">
+      <h3>{{ item[`title`] }}</h3>
+      <p>{{ item[`price`] }}</p>
+      <h4>{{ item[`description`] }}</h4>
     </article>
   </div>
 </template>
 
 <script>
 export default {
+  methods: {
+    price_filter() {},
+  },
+
   data() {
     return {
       items: [
@@ -41,5 +46,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
